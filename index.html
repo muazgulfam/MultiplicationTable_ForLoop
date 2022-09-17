@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Multipication Table</h1>
+    <style>h1 {text-align: center};</style>
+
+    <form onsubmit="printTable(); return false">
+        Table : <input id = "num1" type="number" placeholder="Enter a Number to print it's table" required>
+        <br>
+        Upto : <input id="num2" type="number" value = "10"  >
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <p id="result"> </p>
+
+    <script>
+        function printTable(){
+            let num = +document.querySelector("#num1").value;
+            let times = +document.querySelector("#num2").value;
+            let result = document.querySelector("#result")
+
+            result.innerHTML = " "
+            
+            for(let i = 0; i < times; i++){
+                let count = i + 1;
+                result.innerHTML += `<b>${num} x ${count} = ${num * count}</b> <br><br>` 
+            }
+        }
+    </script>
+
+</body>
+</html>
